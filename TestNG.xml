@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Regression-Testing">
+    <test name="login testing">
+        <classes>
+
+      <class name="Test_case1"></class>
+          <class name="Test_Case2"></class>
+<!--             <class name="Test_Case3"></class>-->
+<!--                     <class name="TestCase_FinalAll"></class>-->
+<!--                             <class name="Test_Case4"></class>-->
+        </classes>
+
+    </test>
+<!--    <test name="register testing">-->
+
+<!--    </test>-->
+</suite>
