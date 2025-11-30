@@ -4,13 +4,13 @@
     <test name="login testing">
         <classes>
 
-<!--      <class name="Test_case1"></class>-->
-<!--           <class name="Test_Case2"></class>-->
-<!--             <class name="Test_Case3"></class>-->
-<!--          <class name="Test_Case4"></class>-->
-<!--           <class name="TestCase_FinalAll"></class>-->
-<!--                 <class name="TestCase_5"></class>-->
-              <class name="TestCase_6"></class>
+      <class name="Test_case1"></class>
+           <class name="Test_Case2"></class>
+             <class name="Test_Case3"></class>
+              <class name="Test_Case4"></class>
+<!--               <class name="TestCase_FinalAll"></class>-->
+                 <class name="TestCase_5"></class>
+                   <class name="TestCase_6"></class>
 
         </classes>
 
