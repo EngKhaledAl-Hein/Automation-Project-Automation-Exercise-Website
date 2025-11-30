@@ -3,12 +3,14 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
+import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
 public class Test_Case4 {
     WebDriver driver;
-    @BeforeTest
+    @BeforeClass
 
     public void Setup(){
         driver=new ChromeDriver();
@@ -53,5 +55,9 @@ public class Test_Case4 {
         driver.findElement(By.xpath("//*[@id=\"header\"]/div/div/div/div[2]/div/ul/li[4]/a")).click();
         driver.findElement(By.partialLinkText("Signup")).click();// pass to Login Signup/Login
 
+    }@AfterTest
+    @Test(description = "Verify that the browser is closed after run" , priority = 5)
+    public void close(){
+        driver.quit();
     }
 }

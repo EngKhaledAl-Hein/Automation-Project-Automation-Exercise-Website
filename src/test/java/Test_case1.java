@@ -4,6 +4,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
+import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
@@ -29,8 +30,8 @@ public class Test_case1 {
 @Test(description = "Verify 'New User Signup!' is visible" , priority = 1)
     public void textVisiable(){
         driver.findElement(By.partialLinkText("Login")).click();
-    //String signupText= driver.findElement(By.xpath("//*[@id=\"form\"]/div/div/div[3]/div/h2")).getText();
-    //Assert.assertEquals(signupText,"New User Signup!");
+    //String signupText= driver.findElement(By.xpath("//*[@id=\"form\"]/div/div/div[3]/div/h2")).getText();/pass
+    //Assert.assertEquals(signupText,"New User Signup!");//pass
 
    String signupText= driver.findElement(By.xpath("//*[@id=\"form\"]/div/div/div[3]/div/h2")).getText();
     Assert.assertEquals(signupText,"New User Signup!");
@@ -160,6 +161,11 @@ public void Logout(){
     driver.findElement(By.xpath("//*[@id=\"header\"]/div/div/div/div[2]/div/ul/li[4]/a")).click();
     driver.findElement(By.partialLinkText("Signup")).click();// pass to Login Signup/Login
 
+}
+@AfterTest
+@Test (description = "verify that the browser is closed after test" , priority = 5)
+public void close(){
+        driver.quit();
 }
 
 }

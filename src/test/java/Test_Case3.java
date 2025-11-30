@@ -4,6 +4,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
+import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
@@ -12,7 +14,7 @@ import java.sql.Driver;
 public class Test_Case3 {
     WebDriver Driver;
     WebDriverWait wait;
-    @BeforeTest
+    @BeforeClass
     public void SetUp(){
         Driver=new ChromeDriver();
         Driver.navigate().to("https://www.automationexercise.com");
@@ -27,6 +29,7 @@ public class Test_Case3 {
         //my_Driver.findElement(By.xpath("//*[@id=\"header\"]/div/div/div/div[2]/div/ul/li[4]/a")).click();//pass to click Signup/Login
         //my_Driver.findElement(By.partialLinkText("Login")).click();//pass to click Signup/Login
         Driver.findElement(By.partialLinkText("Signup")).click();// pass to Login Signup/Login
+        // Automation Practice Website for UI Testing - Test Cases // another way to get title
     }
     @Test(description = "Verify 'Login to your account' is visible",priority = 1)
     public void Login_Visible(){
@@ -53,5 +56,10 @@ public class Test_Case3 {
     public  void Error(){
         WebElement error_message=Driver.findElement(By.xpath("//*[@id=\"form\"]/div/div/div[1]/div/form/p"));
         Assert.assertTrue(error_message.isDisplayed());
+    }
+    @AfterTest
+    @Test(description = "Verify that the browser is closed after finish class script",priority = 3)
+    public void close(){
+        Driver.quit();
     }
 }

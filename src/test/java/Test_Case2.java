@@ -3,6 +3,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
+import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
@@ -13,7 +15,7 @@ public class Test_Case2 {
 //    public void case2_test() {
 //        System.out.println("Running Test Case 2");
 //    }
-    @BeforeTest
+    @BeforeClass
     public void SetUp(){
         my_Driver= new ChromeDriver();
        // my_Driver.navigate().to("https://www.automationexercise.com");
@@ -64,6 +66,11 @@ public class Test_Case2 {
         Assert.assertTrue(delete.isDisplayed());
         my_Driver.findElement(By.xpath("//*[@id=\"form\"]/div/div/div/div/a")).click();
 
+    }
+    @AfterTest
+    @Test(description = "Verify that the browser is closed after finish class script" ,priority = 4 )
+    public void close(){
+        my_Driver.quit();
     }
 
 
